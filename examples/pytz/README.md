@@ -31,3 +31,13 @@ RUN ansible-galaxy collection install -r /build/requirements.yml --collections-p
 RUN pip3 install -r /usr/share/ansible/collections/ansible_collections/awx/awx/requirements.txt
 ```
 
+
+### Run Outside of Runner
+
+You can invoke a playbook manually.
+This command is intended to be relatively robust to changes in the base image.
+
+```
+docker run --rm --tty --interactive --mount "type=bind,src=$(pwd)/examples/pytz,dst=/alan" --env ANSIBLE_STDOUT_CALLBACK=default -e ANSIBLE_CALLBACK_PLUGINS="" awx-awx ansible-playbook -i localhost, /alan/rrule_test.yml
+```
+
