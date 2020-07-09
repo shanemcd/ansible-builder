@@ -4,7 +4,7 @@ This example demonstrates the use of a collection's python dependency.
 You can execute the example by invoking the `run.sh` script.
 
 ```
-source examples/pytz/run.sh
+source examples/run.sh pytz
 ```
 
 This will start out by deleting the existing build context and image.
